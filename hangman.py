@@ -72,7 +72,6 @@ def startgame():
     elif words == "2":
         word = all_words()
     else: print("please enter a number: 1 for common words, 2 for all words")
-    print("".join(word))
     game(word,difficulty(),startoverlay(word))
     
 
