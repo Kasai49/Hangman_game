@@ -76,7 +76,7 @@ def game(word,lives,shown):
         else:
             lives -= 1
             if lives == 0:
-                print("you lost")
+                print("you lost the word you were looking for was: " + ("".join(word)))
                 again()
             else:    
                 game(word,lives,shown)
