@@ -1,7 +1,11 @@
 from english_words import get_english_words_set
 import random
 
-def get_random_english_word():
+def easy_words():
+    data = open("1-1000.txt","r").read().split()
+    return list(data[random.randint(0,len(data)-1)])
+
+def all_words():
     web2lowerset = get_english_words_set(['web2'], lower=True)
     data = list(web2lowerset)
     return list(data[random.randint(0,len(data)-1)])
@@ -59,10 +63,15 @@ def again():
     elif again == "n":
         print("thank you for playing")
     else:
-        print("please enter 'y' if you want to play again or 'n' if you dont want to play another game")
+        print("please enter 'y' if you want to play again or 'n' if you dont want to play another game: ")
 
-def startgame():   
-    word = get_random_english_word()
+def startgame():
+    words = input("do you want to play with common english words[1] or do you want to play with all english words[2]: ")
+    if words == "1":
+        word = easy_words()
+    elif words == "2":
+        word = all_words()
+    else: print("please enter a number: 1 for common words, 2 for all words")
     print("".join(word))
     game(word,difficulty(),startoverlay(word))
     
