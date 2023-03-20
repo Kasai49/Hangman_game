@@ -29,7 +29,7 @@ def game(word,lives,shown):
     checker = 0
     print ("".join(shown) + "        remaining lives " + str(lives))
     guess = input("Enter your Guess: ")
-    if guess == "".join(word):
+    if guess == ("".join(word)):
         print("YOU WON")
         again()
     else:
