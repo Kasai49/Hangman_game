@@ -1,4 +1,4 @@
-from english_words import get_english_words_set
+from english_words import get_english_words_set 
 import random
 
 def easy_words():
@@ -94,12 +94,12 @@ def game(word,lives,shown):
 
 def again():
     again = input("do you want to play again?(y/n)\n")
+    while again not in ['y', 'n']:
+        again = input("please enter 'y' if you want to play again or 'n' if you dont want to play another game: ")
     if again == "y":
         startgame()
     elif again == "n":
         print("thank you for playing")
-    else:
-        print("please enter 'y' if you want to play again or 'n' if you dont want to play another game: ")
     """
     If the user enters 'y' then the game will start again, if the user enters 'n' then the game will
     end, if the user enters anything else then the user will be asked to enter 'y' or 'n' again.
@@ -121,4 +121,3 @@ def startgame():
     """
     
 
-startgame()
